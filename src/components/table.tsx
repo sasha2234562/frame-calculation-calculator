@@ -11,20 +11,20 @@ export const Table: FC<Props> = ({dataOrder}) => {
     return (
         <table className="w-full table-fixed border-collapse">
             <thead>
-            <tr>
-                <th>Наименование</th>
-                <th>ед.</th>
-                <th>кол-во</th>
-                <th>сумма</th>
+            <tr className="bg-gray-200">
+                <th className="border border-gray-300 p-2 text-center">Наименование</th>
+                <th className="border border-gray-300 p-2 text-center">ед.</th>
+                <th className="border border-gray-300 p-2 text-center">кол-во</th>
+                <th className="border border-gray-300 p-2 text-center">сумма</th>
             </tr>
             </thead>
             <tbody>
             {elements.map((elem, index) => (
                 <tr key={index}>
-                    <td>{elem.title}</td>
-                    <td>{elem.unit}</td>
-                    <td>{elem.count}</td>
-                    <td>{elem.price.toFixed(2)}</td>
+                    <td className="border border-gray-300 p-2 text-center">{elem.title}</td>
+                    <td className="border border-gray-300 p-2 text-center">{elem.unit}</td>
+                    <td className="border border-gray-300 p-2 text-center">{elem.count}</td>
+                    <td className="border border-gray-300 p-2 text-center">{elem.price.toFixed(2)}</td>
                 </tr>
             ))}
             </tbody>

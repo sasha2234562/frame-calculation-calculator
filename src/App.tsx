@@ -34,7 +34,7 @@ function App() {
     const [dataCatalog, setDataCatalog] = useState<Map<string, Catalog[]>>(new Map());
     const [dataConfigurations, setDataConfigurations] = useState<Map<string, Configurations[]>>(new Map());
     const [dataOrder, setDataOrder] = useState<DataOrder>({} as DataOrder);
-    const {watch, register, handleSubmit, setValue} = useForm({
+    const {watch, register, handleSubmit, setValue, formState: {errors}} = useForm({
         defaultValues: {
             list: '',
             pipe: '',
@@ -99,7 +99,7 @@ function App() {
                 label={label}
                 min={config?.min}
                 max={config?.max}
-            />
+                error={!!errors[name]}/>
         );
     };
 
@@ -112,6 +112,7 @@ function App() {
                     onClickSelect={(value) => setValue('list', value)}
                     value={watch('list')}
                     defaultValue={'Выберите материал'}
+                    error={!!errors.list}
                 />
                 <Select
                     labelSelect={'Выбор трубы'}
@@ -119,6 +120,7 @@ function App() {
                     onClickSelect={(value) => setValue('pipe', value)}
                     value={watch('pipe')}
                     defaultValue={'Выберите трубу'}
+                    error={!!errors.pipe}
                 />
                 {createSizeInput('Ширина', 'width')}
                 {createSizeInput('Длина', 'height')}
@@ -127,9 +129,10 @@ function App() {
                     options={dataConfigurations.get('frame')?.map((i: Configurations) => i.name) ?? []}
                     onClickSelect={(value) => setValue('frame', value)}
                     value={watch('frame')}
-                    defaultValue={'Выберите прочность'}/>
+                    defaultValue={'Выберите прочность'}
+                    error={!!errors.frame}/>
                 <button className="w-fit p-3 pl-7 pr-7 m-auto bg-[var(--border-B)] rounded text-white
-                transition duration-300 ease-in-out hover:bg-[#0a0644] ">
+                transition duration-300 ease-in-out hover:bg-[#0a0644]">
                     Рассчитать
                 </button>
             </form>

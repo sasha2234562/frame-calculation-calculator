@@ -6,9 +6,10 @@ interface Props {
     value: string;
     onClickSelect: (value: string) => void;
     defaultValue: string;
+    error: boolean;
 }
 
-export const Select: FC<Props> = memo(({options, labelSelect, value, onClickSelect, defaultValue}) => {
+export const Select: FC<Props> = memo(({options, labelSelect, value, onClickSelect, defaultValue, error}) => {
     const [openSelectOptions, setOpenSelectOptions] = useState(false);
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +41,7 @@ export const Select: FC<Props> = memo(({options, labelSelect, value, onClickSele
             <div
                 className={`relative cursor-text h-[44px] border-2 border-opacity-50 ${
                     openSelectOptions ? 'rounded-t-[0] border-[var(--border-B)] border-b-0' : 'rounded-[4px] border-[#CFCFCF]'
-                }`}>
+                } ${error && 'border-[#cb8b2a]'}`}>
                 <p className={`min-h-[47px] px-[16px] pt-[8px] pb-[4px] ${
                     value === '' ? 'text-[#9a9a9a]' : 'text-[var(--text-Strong)]'
                 } text-[20px] font-normal leading-[24px] m-0 text-left z-100`}
