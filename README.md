@@ -1,4 +1,4 @@
-# Products Shop
+# Frame calculation calculator
 
 Это проект на основе React, TypeScript и Vite. Следуйте инструкциям ниже, чтобы запустить проект на своем локальном компьютере.
 
