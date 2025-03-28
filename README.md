@@ -9,7 +9,7 @@
 Сначала вам нужно клонировать репозиторий. Откройте терминал и выполните следующую команду:
 
 ```bash
-git clone https://github.com/sasha2234562/products-shop.git
+git clone https://github.com/sasha2234562/frame-calculation-calculator.git
 ```
 
 
@@ -36,8 +36,7 @@ npm run dev
 Откройте ваш браузер и перейдите по адресу http://localhost:5174 (или другой порт, если указанный по умолчанию не доступен), чтобы увидеть приложение в действии.
 
 # Ссылка на развернутый проект:
-###  https://fantastic-souffle-c3024d.netlify.app
-
+### https://frame-calculation-calculator.netlify.app
 ```
-https://fantastic-souffle-c3024d.netlify.app
+https://frame-calculation-calculator.netlify.app
 ```
